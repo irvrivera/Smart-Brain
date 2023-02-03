@@ -23,16 +23,18 @@ const handleApiCall = (req, res) => {
     });
 };
 
-const handleImage = (request, res, db) => {
+const handleImage = (request, response, db) => {
   const { id } = request.body;
   db("users")
     .where("id", "=", id)
     .increment("entries", 1)
     .returning("entries")
     .then((entries) => {
-      res.json(entries[0].entries);
+      response.json(entries[0].entries);
     })
-    .catch((err) => res.status(400).json("Unable to get entry entry count"));
+    .catch((err) =>
+      response.status(400).json("Unable to get entry entry count")
+    );
 };
 
 module.exports = {

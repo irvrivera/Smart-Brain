@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send(database.users);
+  res.send("It's working!");
 });
 
 app.post("/signin", (req, res) => {
@@ -50,8 +50,8 @@ app.post("/imageUrl", (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(3000, () => {
-  console.log("my app is working on port 3000");
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`my app is working on port ${process.env.PORT}`);
 });
 
 // route res  = this is working / establishes a connection to postman.

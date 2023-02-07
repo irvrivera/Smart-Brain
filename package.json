@@ -4,7 +4,8 @@
   "description": "Smart-Brain",
   "main": "index.js",
   "scripts": {
-    "start": "node.js"
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
   },
   "engines": {
     "node": "18.13.0"

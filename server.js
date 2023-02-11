@@ -13,7 +13,7 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg",
   connection: {
-    connectionString: 'process.env.DATABASE_URL',
+    connectionString: process.env.URI,
     ssl: { rejectUnauthorized: false },
   },
 });
@@ -47,8 +47,9 @@ app.post("/imageUrl", (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`my app is working on port ${process.env.PORT}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`my app is working on port ${PORT}`);
 });
 
 // route res  = this is working / establishes a connection to postman.

@@ -9,11 +9,11 @@ const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
-console.log("process.env.URI: ", process.env.URI);
+console.log("process.env.DATABASE_URL: ", process.env.DATABASE_URL);
 const db = knex({
   client: "pg",
   connection: {
-    connectionString: process.env.URI,
+    connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false },
   },
 });

@@ -33,7 +33,7 @@ const handleImage = (request, response, db) => {
       response.json(entries[0].entries);
     })
     .catch((err) =>
-      response.status(400).json("Unable to get entry entry count")
+      response.status(400).json("Unable to get entry count")
     );
 };
 

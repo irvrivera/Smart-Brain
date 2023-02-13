@@ -39,7 +39,7 @@ app.get("/profile/:id", (req, res) => {
   profile.handleProfileGet(req, res, db);
 });
 
-app.post("/image", (req, res) => {
+app.put("/image", (req, res) => {
   image.handleImage(req, res, db);
 });
 
